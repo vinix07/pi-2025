@@ -50,8 +50,9 @@
 						href="/Animais/listar">Lista de pacientes</a></li>
 					<li class="nav-item"><a class="nav-link me-lg-3"
 						href="/Consultas/listar">Lista de consultas</a></li>
+					<li class="nav-item"> <a class="nav-link me-lg-3"> ${session['usuarioLogado']} </a></li>
                     <li class="nav-item"><a class="nav-link me-lg-3"
-						href="@{Logins.logout}">Logout</a></li>								
+						href="@{Logins.logout}">Logout</a></li>	 							
 				</ul>
 			</div>
 		   #{/if}
@@ -76,6 +77,7 @@
 
 		   
 	#{doLayout /}
+
 
 
 </body>
