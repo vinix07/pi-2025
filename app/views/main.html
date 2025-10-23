@@ -42,14 +42,22 @@
 			#{if session['usuarioLogado']}
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-				#{if session['usuarioPerfil'].equals('OPERADOR')}
-					<li class="nav-item"><a class="nav-link me-lg-3"
-						href="/Animais/form#bg-light">Cadastro de pacientes</a></li>
-				#{/if}
-					<li class="nav-item"><a class="nav-link me-lg-3"
-						href="/Animais/listar">Lista de pacientes</a></li>
-					<li class="nav-item"><a class="nav-link me-lg-3"
-						href="/Consultas/listar">Lista de consultas</a></li>
+
+					<li class="nav-item">	
+	<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Menu
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  #{if session['usuarioPerfil'].equals('OPERADOR')}
+    <a class="nav-link me-lg-3" href="/Animais/form#bg-light">Cadastro de pacientes</a>
+    #{/if}
+    <a class="nav-link me-lg-3" href="/Animais/listar">Lista de pacientes</a>
+    <a class="nav-link me-lg-3" href="/Consultas/listar">Lista de consultas</a>
+  </div>
+</div>
+</li>
+				
 					<li class="nav-item"> <a class="nav-link me-lg-3"> ${session['usuarioLogado']} </a></li>
                     <li class="nav-item"><a class="nav-link me-lg-3"
 						href="@{Logins.logout}">Logout</a></li>	 							
@@ -81,3 +89,4 @@
 
 
 </body>
+
