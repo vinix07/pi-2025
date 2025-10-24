@@ -112,6 +112,16 @@
 
 
 <!-- Ver como adiciona o @Operador com if -->
+	#{ifErrors}
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  <ul>
+		#{errors}
+			<li>${error.key} - ${error}</li>
+		#{/errors}
+	  </ul>
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+#{/ifErrors}
 
 #{if session['usuarioPerfil'].equals('OPERADOR')}
 	<section class="bg-light">
@@ -161,4 +171,5 @@
 	</section>
 	
 	#{/if}
+
 </body>
