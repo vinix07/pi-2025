@@ -10,9 +10,11 @@ import play.db.jpa.Model;
 @Entity
 public class Animal extends Model{
 
-	
+    @Required	
 	public String nome;
+	@Required
 	public String peso;
+	@Required
 	public String especie;
 	
 	@ManyToOne
@@ -20,3 +22,4 @@ public class Animal extends Model{
 	public Tutor tutor;
 	
 }
+
