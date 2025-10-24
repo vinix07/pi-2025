@@ -17,7 +17,14 @@ public class Animais extends Controller {
 		render(tutores);
 	}
 
-	public static void salvar(Animal animal) {
+	public static void salvar(@Valid Animal animal) {
+
+		if(validation.hasErrors()) {
+			params.flash();
+			validation.keep(); // Segurar os dados na nova requisição!
+			renderTemplate("Animais/form.html");
+		}
+		
 		animal.save();
 		flash.success("Dados do " + animal.nome + " cadastrados!");
 		detalhar(animal);
@@ -58,3 +65,4 @@ public class Animais extends Controller {
 	}
 
 }
+
